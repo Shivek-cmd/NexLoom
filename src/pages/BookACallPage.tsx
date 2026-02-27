@@ -15,7 +15,7 @@ const BookACallPage = () => {
             <Calendar className="w-4 h-4" />
             <span className="text-sm font-medium">Free Consultation</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-display text-4xl lg:text-6xl font-bold text-primary-foreground mb-4">
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-display text-3xl lg:text-5xl font-bold text-primary-foreground mb-4">
             Book a Discovery Call
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">

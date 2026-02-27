@@ -62,8 +62,8 @@ export const ServicesSection = () => {
                       />
                     </div>
                     <div className="p-8">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 -mt-12 relative z-10">
-                        <Icon className="w-7 h-7 text-primary-foreground" />
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-6 h-6 text-primary-foreground" />
                       </div>
                       <h3 className="font-display text-xl font-bold text-foreground mb-3">
                         {cat.title}

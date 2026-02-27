@@ -77,7 +77,7 @@ const ServiceCategoryPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-6 max-w-4xl mx-auto"
+            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 max-w-4xl mx-auto"
           >
             {category.headline}
           </motion.h1>

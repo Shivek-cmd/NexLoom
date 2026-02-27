@@ -32,7 +32,7 @@ const CaseStudyDetailPage = () => {
             <ArrowLeft className="w-4 h-4" /> Back to Case Studies
           </Link>
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="block text-accent font-semibold text-sm uppercase tracking-wider mb-3">{study.category}</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-display text-3xl lg:text-5xl font-bold text-primary-foreground max-w-4xl">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-display text-2xl lg:text-4xl font-bold text-primary-foreground max-w-4xl">
             {study.title}
           </motion.h1>
         </div>
