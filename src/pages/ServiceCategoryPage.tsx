@@ -63,17 +63,16 @@ const ServiceCategoryPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 pb-12 lg:pt-32 lg:pb-16 overflow-hidden">
+      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden min-h-[340px] lg:min-h-[420px]">
         <div className="absolute inset-0 z-0">
           <img src="/images/hero-services.jpg" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/85 via-secondary/80 to-secondary/90" />
-        <div className="absolute inset-0 z-[2] hero-glow animate-pulse-glow" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4"
+            className="inline-block text-accent font-semibold text-xs tracking-wider uppercase mb-3"
           >
             Services
           </motion.span>
@@ -81,7 +80,7 @@ const ServiceCategoryPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 max-w-4xl mx-auto"
+            className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground mb-3 max-w-3xl mx-auto"
           >
             {category.headline}
           </motion.h1>
@@ -89,16 +88,16 @@ const ServiceCategoryPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-primary-foreground/70 text-lg max-w-3xl mx-auto mb-8"
+            className="text-primary-foreground/70 text-sm sm:text-base max-w-2xl mx-auto mb-6"
           >
             {category.intro}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-            <Button asChild variant="hero" size="lg">
+            <Button asChild variant="hero" size="default">
               <Link to="/book-a-call" className="group">
-                <Calendar className="w-5 h-5" />
+                <Calendar className="w-4 h-4" />
                 Book a Call
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </motion.div>

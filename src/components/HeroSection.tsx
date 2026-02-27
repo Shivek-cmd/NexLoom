@@ -1,25 +1,43 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+const heroImages = [
+  "/images/hero-1.jpg",
+  "/images/hero-2.jpg",
+  "/images/hero-3.jpg",
+  "/images/hero-4.jpg",
+];
+
 export const HeroSection = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 z-0" style={{ background: "var(--gradient-hero)" }} />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full hero-glow animate-pulse-glow" />
-      <div
-        className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full hero-glow animate-pulse-glow"
-        style={{ animationDelay: "1.5s" }}
-      />
-      <div
-        className="absolute inset-0 z-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
+      {/* Background image carousel */}
+      <AnimatePresence mode="popLayout">
+        <motion.img
+          key={currentImage}
+          src={heroImages[currentImage]}
+          alt=""
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+      </AnimatePresence>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/80 via-secondary/75 to-secondary/85" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -27,7 +45,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8"
+            className="gradient-border-pill inline-flex items-center gap-2 px-4 py-2 rounded-full text-primary mb-8"
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Engineering · Cloud · AI · Growth</span>
@@ -87,23 +105,21 @@ export const HeroSection = () => {
               ))}
             </div>
           </motion.div>
+
+          {/* Carousel indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {heroImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentImage(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  i === currentImage ? "bg-primary w-6" : "bg-primary-foreground/30"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2"
-        >
-          <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
