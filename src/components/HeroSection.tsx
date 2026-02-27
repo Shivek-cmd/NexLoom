@@ -65,8 +65,8 @@ export const HeroSection = () => {
                 border: "2px solid transparent",
               }}
             >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Engineering · Cloud · AI · Growth</span>
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-primary-foreground">Engineering · Cloud · AI · Growth</span>
             </div>
           </motion.div>
 
