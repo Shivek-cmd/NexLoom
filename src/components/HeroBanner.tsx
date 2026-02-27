@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface HeroBannerProps {
@@ -8,7 +7,7 @@ interface HeroBannerProps {
 
 export const HeroBanner = ({ image, children }: HeroBannerProps) => {
   return (
-    <section className="relative pt-28 pb-12 lg:pt-32 lg:pb-16 overflow-hidden">
+    <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden min-h-[340px] lg:min-h-[420px]">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
