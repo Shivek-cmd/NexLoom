@@ -67,7 +67,7 @@ const ServiceCategoryPage = () => {
         <div className="absolute inset-0 z-0">
           <img src="/images/hero-services.jpg" alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/85 via-secondary/80 to-secondary/90" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/90 via-secondary/85 to-secondary/92" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}

@@ -18,7 +18,7 @@ export const HeroBanner = ({ image, children }: HeroBannerProps) => {
         />
       </div>
       {/* Dark overlay */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/85 via-secondary/80 to-secondary/90" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/90 via-secondary/85 to-secondary/92" />
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {children}
