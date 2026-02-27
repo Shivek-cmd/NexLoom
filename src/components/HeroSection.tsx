@@ -32,7 +32,7 @@ export const HeroSection = () => {
   }, [goToNext]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-28 lg:py-32">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-24 lg:py-28">
       {/* Base image (current) */}
       <img
         src={heroImages[currentImage]}
