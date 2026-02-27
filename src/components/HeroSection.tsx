@@ -1,21 +1,77 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+const heroImages = [
+  "/images/hero-1.jpg",
+  "/images/hero-2.jpg",
+  "/images/hero-3.jpg",
+  "/images/hero-4.jpg",
+];
+
 export const HeroSection = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const nextImage = useCallback(() => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextImage, 3000);
+    return () => clearInterval(interval);
+  }, [nextImage]);
+
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24">
-      <div className="absolute inset-0 z-0" style={{ background: "var(--gradient-hero)" }} />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full hero-glow animate-pulse-glow" />
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full hero-glow animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+      {/* Carousel Background */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentImage}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <img
+            src={heroImages[currentImage]}
+            alt="Nexloom hero background"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/85 via-secondary/75 to-secondary/90" />
+
+      {/* Glow effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full hero-glow animate-pulse-glow z-[2]" />
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full hero-glow animate-pulse-glow z-[2]" style={{ animationDelay: "1.5s" }} />
+
+      {/* Grid pattern */}
       <div
-        className="absolute inset-0 z-0 opacity-[0.03]"
+        className="absolute inset-0 z-[2] opacity-[0.03]"
         style={{
           backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
           backgroundSize: "60px 60px"
         }}
       />
+
+      {/* Carousel indicators */}
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentImage(i)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === currentImage ? "bg-primary w-6" : "bg-primary-foreground/30 hover:bg-primary-foreground/50"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -122,7 +178,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
