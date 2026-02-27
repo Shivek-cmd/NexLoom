@@ -27,13 +27,18 @@ const CaseStudiesListPage = () => {
             {caseStudies.map((cs, i) => (
               <motion.div key={cs.slug} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <Link to={`/case-studies/${cs.slug}`} className="block group">
-                  <div className="glass-card p-8 rounded-2xl border border-border/50 h-full transition-all duration-300 hover:-translate-y-2 hover:border-primary/30">
-                    <span className="text-xs font-semibold text-primary uppercase tracking-wider">{cs.category}</span>
-                    <h2 className="font-display text-xl font-bold text-foreground mt-2 mb-3">{cs.title}</h2>
-                    <p className="text-muted-foreground text-sm mb-4">{cs.excerpt}</p>
-                    <span className="inline-flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all">
-                      Read Case Study <ArrowRight className="w-4 h-4" />
-                    </span>
+                  <div className="glass-card rounded-2xl border border-border/50 h-full transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 overflow-hidden">
+                    <div className="aspect-video overflow-hidden">
+                      <img src={cs.image} alt={cs.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                    </div>
+                    <div className="p-8">
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wider">{cs.category}</span>
+                      <h2 className="font-display text-xl font-bold text-foreground mt-2 mb-3">{cs.title}</h2>
+                      <p className="text-muted-foreground text-sm mb-4">{cs.excerpt}</p>
+                      <span className="inline-flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                        Read Case Study <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
                   </div>
                 </Link>
               </motion.div>

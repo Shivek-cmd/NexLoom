@@ -10,6 +10,7 @@ export interface CaseStudy {
   relatedServices: string[];
   metaTitle: string;
   metaDescription: string;
+  image: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -30,6 +31,7 @@ export const caseStudies: CaseStudy[] = [
     relatedServices: ["saas-platform-engineering", "full-stack-web-development", "system-architecture"],
     metaTitle: "Fintech SaaS Platform Case Study | Nexloom",
     metaDescription: "How Nexloom built a scalable multi-tenant SaaS platform for a fintech startup, achieving 10,000 users in the first quarter with 99.9% uptime.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
   },
   {
     slug: "cloud-migration-healthcare",
@@ -48,6 +50,7 @@ export const caseStudies: CaseStudy[] = [
     relatedServices: ["cloud-architecture", "security-compliance", "infrastructure-automation"],
     metaTitle: "Healthcare Cloud Migration Case Study | Nexloom",
     metaDescription: "How Nexloom migrated a healthcare provider to AWS with zero downtime, HIPAA compliance, and 45% cost reduction.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
   },
   {
     slug: "ai-customer-support-ecommerce",
@@ -66,6 +69,7 @@ export const caseStudies: CaseStudy[] = [
     relatedServices: ["ai-agents", "llm-integrations", "intelligent-automation"],
     metaTitle: "AI Customer Support Case Study | Nexloom",
     metaDescription: "How Nexloom deployed AI agents for e-commerce customer support, automating 70% of inquiries and reducing costs by 55%.",
+    image: "https://images.unsplash.com/photo-1531746790095-e5995aef3026?w=800&q=80",
   },
   {
     slug: "data-pipeline-retail-analytics",
@@ -84,6 +88,7 @@ export const caseStudies: CaseStudy[] = [
     relatedServices: ["data-pipelines", "analytics-dashboards", "platform-integrations"],
     metaTitle: "Retail Data Pipeline Case Study | Nexloom",
     metaDescription: "How Nexloom built a real-time data pipeline unifying 12 sources for a retail chain, enabling analytics across 200+ locations.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
   },
   {
     slug: "mobile-app-logistics",
@@ -102,6 +107,7 @@ export const caseStudies: CaseStudy[] = [
     relatedServices: ["mobile-app-development", "full-stack-web-development", "api-development"],
     metaTitle: "Logistics Mobile App Case Study | Nexloom",
     metaDescription: "How Nexloom built a cross-platform mobile app for logistics with real-time tracking and route optimization for 500+ vehicles.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
   },
   {
     slug: "devops-pipeline-saas-company",
@@ -120,5 +126,6 @@ export const caseStudies: CaseStudy[] = [
     relatedServices: ["devops-cicd", "infrastructure-automation", "cloud-architecture"],
     metaTitle: "DevOps Transformation Case Study | Nexloom",
     metaDescription: "How Nexloom transformed a SaaS company's deployment process, reducing deployment time from 2 days to 15 minutes with fully automated CI/CD.",
+    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80",
   },
 ];
