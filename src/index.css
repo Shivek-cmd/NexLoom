@@ -1,87 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Synaptiq Core Design System - Vibrant Tech Theme */
+/* Nexloom Design System - Premium High-Tech Theme */
 
 @layer base {
   :root {
-    /* Core brand colors - Electric Teal/Cyan */
-    --background: 210 25% 98%;
-    --foreground: 220 30% 12%;
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 12%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 12%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Primary - Vibrant Teal */
-    --primary: 175 84% 40%;
+    /* Primary - Deep Electric Blue */
+    --primary: 230 84% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Deep Navy */
-    --secondary: 220 60% 15%;
+    /* Secondary - Dark Slate */
+    --secondary: 222 47% 11%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent - Electric Cyan */
-    --accent: 185 100% 50%;
-    --accent-foreground: 220 60% 10%;
+    /* Accent - Vivid Cyan */
+    --accent: 190 95% 50%;
+    --accent-foreground: 222 47% 11%;
 
-    --muted: 210 20% 94%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 175 84% 40%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 230 84% 55%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(175 84% 40%) 0%, hsl(185 100% 50%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(220 60% 8%) 0%, hsl(220 60% 15%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220 60% 10%) 0%, hsl(220 50% 18%) 50%, hsl(200 60% 20%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 25% 97%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(185 100% 50% / 0.15) 0%, transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(230 84% 55%) 0%, hsl(190 95% 50%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(222 47% 11%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(230 40% 14%) 50%, hsl(222 35% 18%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 97%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(230 84% 55% / 0.12) 0%, transparent 70%);
     
-    --shadow-card: 0 4px 24px -4px hsl(220 60% 15% / 0.08);
-    --shadow-card-hover: 0 12px 40px -8px hsl(220 60% 15% / 0.15);
-    --shadow-glow: 0 0 60px -12px hsl(175 84% 40% / 0.4);
+    --shadow-card: 0 4px 24px -4px hsl(222 47% 11% / 0.08);
+    --shadow-card-hover: 0 20px 50px -12px hsl(222 47% 11% / 0.18);
+    --shadow-glow: 0 0 80px -12px hsl(230 84% 55% / 0.4);
   }
 
   .dark {
-    --background: 220 60% 8%;
-    --foreground: 210 25% 98%;
+    --background: 222 47% 6%;
+    --foreground: 220 20% 97%;
 
-    --card: 220 55% 12%;
-    --card-foreground: 210 25% 98%;
+    --card: 222 40% 10%;
+    --card-foreground: 220 20% 97%;
 
-    --popover: 220 55% 12%;
-    --popover-foreground: 210 25% 98%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 220 20% 97%;
 
-    --primary: 175 84% 45%;
+    --primary: 230 84% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 40% 20%;
-    --secondary-foreground: 210 25% 98%;
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 220 20% 97%;
 
-    --muted: 220 40% 18%;
-    --muted-foreground: 210 20% 65%;
+    --muted: 222 30% 16%;
+    --muted-foreground: 220 14% 60%;
 
-    --accent: 185 100% 55%;
-    --accent-foreground: 220 60% 10%;
+    --accent: 190 95% 55%;
+    --accent-foreground: 222 47% 6%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 40% 22%;
-    --input: 220 40% 22%;
-    --ring: 175 84% 45%;
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 230 84% 60%;
   }
 }
 
@@ -96,11 +95,12 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
   }
 }
 
@@ -122,6 +122,32 @@
   .hero-glow {
     background: var(--gradient-glow);
   }
+
+  /* Mega dropdown */
+  .mega-dropdown {
+    @apply absolute left-0 right-0 top-full bg-secondary border-t border-border/20;
+    box-shadow: 0 25px 50px -12px hsl(222 47% 6% / 0.5);
+  }
+
+  /* Highlight animation for scroll-to sections */
+  .service-highlight {
+    animation: highlight-pulse 2.5s ease-out forwards;
+  }
+
+  @keyframes highlight-pulse {
+    0% { 
+      box-shadow: 0 0 0 0 hsl(230 84% 55% / 0.4);
+      transform: scale(1.01);
+    }
+    50% { 
+      box-shadow: 0 0 30px 4px hsl(230 84% 55% / 0.2);
+      transform: scale(1.01);
+    }
+    100% { 
+      box-shadow: 0 0 0 0 hsl(230 84% 55% / 0);
+      transform: scale(1);
+    }
+  }
 }
 
 @layer utilities {
@@ -139,6 +165,10 @@
 
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-zoom-in {
+    animation: zoom-in 0.6s ease-out forwards;
   }
 
   @keyframes float {
@@ -159,5 +189,10 @@
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
+  }
+
+  @keyframes zoom-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
   }
 }
