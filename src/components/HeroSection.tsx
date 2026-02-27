@@ -90,7 +90,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -103,7 +103,7 @@ export const HeroSection = () => {
         >
           <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
         </motion.div>
-      </motion.div> */}
+      </motion.div>
     </section>
   );
 };
