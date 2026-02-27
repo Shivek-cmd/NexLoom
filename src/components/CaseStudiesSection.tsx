@@ -51,16 +51,26 @@ export const CaseStudiesSection = () => {
               className="group"
             >
               <Link to={`/case-studies/${study.slug}`}>
-                <div className="glass-card p-8 rounded-2xl h-full border border-border/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30">
-                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">{study.category}</span>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-3 mt-2 flex items-center gap-2">
-                    {study.title}
-                    <ArrowUpRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4 text-sm">{study.excerpt}</p>
-                  <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all">
-                    Read Case Study <ArrowUpRight className="w-4 h-4" />
-                  </span>
+                <div className="glass-card rounded-2xl h-full border border-border/50 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 overflow-hidden">
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={study.image}
+                      alt={study.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wider">{study.category}</span>
+                    <h3 className="font-display text-xl font-bold text-foreground mb-3 mt-2 flex items-center gap-2">
+                      {study.title}
+                      <ArrowUpRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4 text-sm">{study.excerpt}</p>
+                    <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all">
+                      Read Case Study <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
               </Link>
             </motion.div>

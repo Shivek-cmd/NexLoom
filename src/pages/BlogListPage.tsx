@@ -27,13 +27,18 @@ const BlogListPage = () => {
             {blogPosts.map((post, i) => (
               <motion.div key={post.slug} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
                 <Link to={`/blog/${post.slug}`} className="block group h-full">
-                  <div className="glass-card p-6 rounded-2xl border border-border/50 h-full transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 flex flex-col">
-                    <span className="text-xs font-semibold text-primary uppercase tracking-wider">{post.category}</span>
-                    <h2 className="font-display text-lg font-bold text-foreground mt-2 mb-2">{post.title}</h2>
-                    <p className="text-muted-foreground text-sm mb-4 flex-grow">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground text-xs flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
-                      <span className="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Read <ArrowRight className="w-4 h-4" /></span>
+                  <div className="glass-card rounded-2xl border border-border/50 h-full transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 flex flex-col overflow-hidden">
+                    <div className="aspect-video overflow-hidden">
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wider">{post.category}</span>
+                      <h2 className="font-display text-lg font-bold text-foreground mt-2 mb-2">{post.title}</h2>
+                      <p className="text-muted-foreground text-sm mb-4 flex-grow">{post.excerpt}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground text-xs flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
+                        <span className="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Read <ArrowRight className="w-4 h-4" /></span>
+                      </div>
                     </div>
                   </div>
                 </Link>

@@ -10,6 +10,7 @@ export interface BlogPost {
   metaTitle: string;
   metaDescription: string;
   relatedServices: string[];
+  image: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -18,6 +19,7 @@ export const blogPosts: BlogPost[] = [
     title: "Building AI Agents for Production: A Practical Guide",
     category: "AI & Automation",
     excerpt: "Learn how to design, build, and deploy AI agents that handle real-world business tasks reliably and at scale.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     content: `AI agents are transforming how businesses operate, but building production-ready agents requires more than just connecting to an LLM API. In this guide, we cover the key architectural decisions, error handling strategies, and monitoring practices needed to deploy reliable AI agents.
 
 ## Understanding Agent Architecture
@@ -49,6 +51,7 @@ Building reliable AI agents is an engineering discipline, not just a prompt engi
     title: "Microservices vs Monolith in 2026: Making the Right Choice",
     category: "Engineering",
     excerpt: "The monolith vs microservices debate has evolved. Here's a practical framework for choosing the right architecture for your project.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
     content: `The architecture decision between microservices and monoliths remains one of the most impactful choices in software engineering. In 2026, the landscape has shifted with modular monoliths gaining popularity as a pragmatic middle ground.
 
 ## When Monoliths Win
@@ -78,6 +81,7 @@ Consider your team size, deployment frequency requirements, scaling needs, and o
     title: "Kubernetes Cost Optimization: Strategies That Actually Work",
     category: "Cloud & DevOps",
     excerpt: "Reduce your Kubernetes infrastructure costs by 40-60% with these proven strategies for resource management and cluster optimization.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
     content: `Kubernetes is powerful but can become expensive quickly without proper resource management. Most organizations are over-provisioning by 40-60%, paying for compute they don't need.
 
 ## Right-Sizing Your Workloads
@@ -109,6 +113,7 @@ These strategies, implemented systematically, typically yield 40-60% cost reduct
     title: "LLM Integration Patterns for Enterprise Applications",
     category: "AI & Automation",
     excerpt: "Proven architectural patterns for integrating large language models into enterprise applications safely and effectively.",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
     content: `Integrating LLMs into enterprise applications requires careful architectural planning. The wrong approach leads to unpredictable costs, security risks, and unreliable outputs.
 
 ## The Gateway Pattern
@@ -140,6 +145,7 @@ Enterprise LLM integration is about building reliable, secure, and cost-effectiv
     title: "CI/CD Pipeline Best Practices for High-Velocity Teams",
     category: "Cloud & DevOps",
     excerpt: "Design CI/CD pipelines that enable daily deployments with confidence. Learn the practices that separate high-performing teams from the rest.",
+    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80",
     content: `High-performing engineering teams deploy multiple times per day with confidence. The foundation of this capability is a well-designed CI/CD pipeline that provides fast feedback, ensures quality, and automates the path to production.
 
 ## Pipeline Design Principles
@@ -171,6 +177,7 @@ The best CI/CD pipeline is one your team trusts completely. When developers are 
     title: "API Design for Outstanding Developer Experience",
     category: "Integrations",
     excerpt: "Build APIs that developers love to use. Practical principles for designing intuitive, consistent, and well-documented APIs.",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
     content: `A well-designed API is a competitive advantage. When developers find your API intuitive and well-documented, integration time drops, support tickets decrease, and platform adoption accelerates.
 
 ## Consistency Is King
