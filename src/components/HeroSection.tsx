@@ -1,22 +1,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{ background: "var(--gradient-hero)" }}
-      />
-      
-      {/* Animated glow effects */}
+      <div className="absolute inset-0 z-0" style={{ background: "var(--gradient-hero)" }} />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full hero-glow animate-pulse-glow" />
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full hero-glow animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-      
-      {/* Grid pattern overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0 opacity-[0.03]"
         style={{
           backgroundImage: "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
@@ -26,7 +19,6 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,33 +26,29 @@ export const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8"
           >
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">AI-Powered Solutions for Modern Business</span>
+            <span className="text-sm font-medium">Engineering · Cloud · AI · Growth</span>
           </motion.div>
 
-          {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6"
           >
-            Accelerate Growth with{" "}
-            <span className="gradient-text">AI-Driven</span>{" "}
-            Innovation
+            We Build the Software{" "}
+            <span className="gradient-text">That Scales</span>{" "}
+            Your Business
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg sm:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-10"
           >
-            Delivering end-to-end software solutions for digital transformation. 
-            Streamline operations, increase revenue, and scale with confidence.
+            From full-stack engineering and cloud infrastructure to AI agents and growth systems—Nexloom delivers end-to-end technology solutions for ambitious companies.
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,20 +56,19 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button asChild variant="hero" size="lg">
-              <a href="https://cal.com/amit-happypeopleai" target="_blank" rel="noopener noreferrer" className="group">
+              <Link to="/book-a-call" className="group">
                 Book a Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </Button>
             <Button asChild variant="heroOutline" size="lg">
-              <a href="#case-studies">
+              <Link to="/case-studies">
                 <Play className="w-5 h-5" />
                 View Case Studies
-              </a>
+              </Link>
             </Button>
           </motion.div>
 
-          {/* Trust Indicators */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -92,7 +79,7 @@ export const HeroSection = () => {
               Trusted by forward-thinking companies worldwide
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-              {["TechCorp", "InnovateLab", "DataFlow", "CloudScale", "NextGen"].map((company, i) => (
+              {["TechCorp", "InnovateLab", "DataFlow", "CloudScale", "NextGen"].map((company) => (
                 <span key={company} className="text-primary-foreground/70 font-semibold text-lg">
                   {company}
                 </span>
@@ -102,7 +89,6 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

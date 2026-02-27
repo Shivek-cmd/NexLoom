@@ -1,67 +1,82 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useNavigate } from "react-router-dom";
+import { serviceCategories } from "@/data/services";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "How We Work", href: "/how-we-work" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const megaRef = useRef<HTMLDivElement>(null);
+  const megaTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const navigate = useNavigate();
+
+  const openMega = () => {
+    clearTimeout(megaTimeout.current);
+    setMegaOpen(true);
+  };
+  const closeMega = () => {
+    megaTimeout.current = setTimeout(() => setMegaOpen(false), 200);
+  };
+
+  useEffect(() => () => clearTimeout(megaTimeout.current), []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <motion.a
-            href="#"
-            className="flex items-center gap-2 group"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-              <Zap className="w-5 h-5 text-primary-foreground" />
+              <span className="text-primary-foreground font-black text-lg">N</span>
             </div>
             <span className="font-display font-bold text-xl text-foreground">
-              Synaptiq<span className="gradient-text"> Core</span>
+              Nex<span className="gradient-text">loom</span>
             </span>
-          </motion.a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link, index) => (
-              <motion.a
+            {/* Services with Mega Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={openMega}
+              onMouseLeave={closeMega}
+              ref={megaRef}
+            >
+              <button className="px-4 py-2 text-muted-foreground hover:text-primary font-medium transition-colors duration-200 flex items-center gap-1">
+                Services
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${megaOpen ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+
+            {navLinks.map((link) => (
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="px-4 py-2 text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 {link.label}
-              </motion.a>
+              </Link>
             ))}
           </div>
 
           {/* Desktop CTA */}
-          <motion.div
-            className="hidden lg:block"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          <div className="hidden lg:block">
             <Button asChild variant="hero" size="default">
-              <a href="https://cal.com/amit-happypeopleai" target="_blank" rel="noopener noreferrer">
-                Book a Call
-              </a>
+              <Link to="/book-a-call">Book a Call</Link>
             </Button>
-          </motion.div>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -78,6 +93,53 @@ export const Navbar = () => {
         </div>
       </div>
 
+      {/* Mega Dropdown */}
+      <AnimatePresence>
+        {megaOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="hidden lg:block mega-dropdown"
+            onMouseEnter={openMega}
+            onMouseLeave={closeMega}
+          >
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+              <div className="grid grid-cols-4 gap-8">
+                {serviceCategories.map((cat) => (
+                  <div key={cat.slug}>
+                    <h3 className="text-secondary-foreground font-bold text-sm uppercase tracking-wider mb-4">
+                      {cat.title}
+                    </h3>
+                    <ul className="space-y-2.5 mb-6">
+                      {cat.subservices.map((sub) => (
+                        <li key={sub.id}>
+                          <Link
+                            to={`/services/${cat.slug}#${sub.id}`}
+                            onClick={() => setMegaOpen(false)}
+                            className="text-secondary-foreground/70 hover:text-accent text-sm transition-colors duration-200 block hover:translate-x-1 transform"
+                          >
+                            {sub.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      to={`/services/${cat.slug}`}
+                      onClick={() => setMegaOpen(false)}
+                      className="inline-flex items-center gap-1 text-accent text-sm font-semibold hover:gap-2 transition-all duration-200"
+                    >
+                      {cat.ctaLabel} <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -86,24 +148,54 @@ export const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-background border-b border-border"
+            className="lg:hidden bg-background border-b border-border max-h-[80vh] overflow-y-auto"
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
+              {/* Mobile Services Accordion */}
+              <button
+                className="flex items-center justify-between w-full px-4 py-3 text-foreground hover:text-primary hover:bg-muted rounded-lg font-medium transition-colors"
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              >
+                Services
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {mobileServicesOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden pl-4"
+                  >
+                    {serviceCategories.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        to={`/services/${cat.slug}`}
+                        className="block px-4 py-2.5 text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
+                        onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}
+                      >
+                        {cat.title}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="block px-4 py-3 text-foreground hover:text-primary hover:bg-muted rounded-lg font-medium transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-2">
                 <Button asChild variant="hero" className="w-full">
-                  <a href="https://cal.com/amit-happypeopleai" target="_blank" rel="noopener noreferrer">
+                  <Link to="/book-a-call" onClick={() => setMobileMenuOpen(false)}>
                     Book a Call
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
