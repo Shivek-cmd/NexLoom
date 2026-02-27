@@ -17,8 +17,8 @@ const footerLinks = {
   ],
   resources: [
     { label: "Book a Call", href: "/book-a-call" },
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
   ],
 };
 
@@ -106,9 +106,8 @@ export const Footer = () => {
               © {new Date().getFullYear()} Nexloom. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-primary-foreground/50 hover:text-accent text-sm transition-colors">Terms</a>
-              <a href="#" className="text-primary-foreground/50 hover:text-accent text-sm transition-colors">Privacy</a>
-              <a href="#" className="text-primary-foreground/50 hover:text-accent text-sm transition-colors">Cookies</a>
+              <Link to="/terms-of-service" className="text-primary-foreground/50 hover:text-accent text-sm transition-colors">Terms</Link>
+              <Link to="/privacy-policy" className="text-primary-foreground/50 hover:text-accent text-sm transition-colors">Privacy</Link>
             </div>
           </div>
         </div>
