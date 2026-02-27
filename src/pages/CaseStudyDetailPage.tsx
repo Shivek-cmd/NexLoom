@@ -26,7 +26,11 @@ const CaseStudyDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section className="pt-28 pb-10 lg:pt-32" style={{ background: "var(--gradient-hero)" }}>
+      <section className="relative pt-28 pb-10 lg:pt-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/hero-casestudies.jpg" alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/85 via-secondary/80 to-secondary/90" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link to="/case-studies" className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Case Studies

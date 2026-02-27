@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { HeroBanner } from "@/components/HeroBanner";
 
 const values = [
   { icon: Zap, title: "Technical Excellence", desc: "We build with modern architecture, best practices, and a relentless focus on quality, performance, and scalability." },
@@ -16,16 +17,14 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section className="pt-28 pb-12 lg:pt-32 lg:pb-16" style={{ background: "var(--gradient-hero)" }}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="font-display text-3xl lg:text-5xl font-bold text-primary-foreground mb-4">
-            About <span className="gradient-text">Nexloom</span>
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-primary-foreground/70 text-lg max-w-3xl mx-auto">
-            We are a technology company that helps ambitious businesses build, scale, and automate through expert engineering, cloud infrastructure, AI solutions, and growth systems.
-          </motion.p>
-        </div>
-      </section>
+      <HeroBanner image="/images/hero-about.jpg">
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="font-display text-3xl lg:text-5xl font-bold text-primary-foreground mb-4">
+          About <span className="gradient-text">Nexloom</span>
+        </motion.h1>
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-primary-foreground/70 text-lg max-w-3xl mx-auto">
+          We are a technology company that helps ambitious businesses build, scale, and automate through expert engineering, cloud infrastructure, AI solutions, and growth systems.
+        </motion.p>
+      </HeroBanner>
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
