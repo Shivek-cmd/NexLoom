@@ -32,7 +32,7 @@ export const HeroSection = () => {
   }, [goToNext]);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-28 lg:py-32">
       {/* Base image (current) */}
       <img
         src={heroImages[currentImage]}
@@ -58,20 +58,15 @@ export const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="inline-block mb-8"
           >
-            <div className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full">
-              {/* Spinning gradient border */}
-              <div className="absolute inset-0 rounded-full p-[2px] overflow-hidden">
-                <div
-                  className="absolute inset-[-50%] animate-spin"
-                  style={{
-                    background: "conic-gradient(from 0deg, hsl(230 84% 55%), hsl(190 95% 50%), hsl(280 80% 60%), hsl(230 84% 55%))",
-                    animationDuration: "3s",
-                  }}
-                />
-                <div className="absolute inset-[2px] rounded-full bg-secondary" />
-              </div>
-              <Sparkles className="w-4 h-4 text-primary relative z-10" />
-              <span className="text-sm font-medium text-primary relative z-10">Engineering · Cloud · AI · Growth</span>
+            <div
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full"
+              style={{
+                background: "linear-gradient(hsl(var(--secondary)), hsl(var(--secondary))) padding-box, linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(280 80% 60%)) border-box",
+                border: "2px solid transparent",
+              }}
+            >
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Engineering · Cloud · AI · Growth</span>
             </div>
           </motion.div>
 
