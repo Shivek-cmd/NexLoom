@@ -9,8 +9,8 @@ const BookACallPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-20" style={{ background: "var(--gradient-hero)" }}>
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <section className="pt-28 pb-12 lg:pt-32 lg:pb-16" style={{ background: "var(--gradient-hero)" }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6">
             <Calendar className="w-4 h-4" />
             <span className="text-sm font-medium">Free Consultation</span>
