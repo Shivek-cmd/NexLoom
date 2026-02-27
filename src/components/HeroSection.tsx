@@ -28,6 +28,35 @@ export const HeroSection = () => {
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Engineering · Cloud · AI · Growth</span>
           </motion.div>
+          <style>{`
+            @keyframes gradient-border-spin {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+            .gradient-border-pill {
+              position: relative;
+              z-index: 0;
+            }
+            .gradient-border-pill::before {
+              content: '';
+              position: absolute;
+              inset: -2px;
+              border-radius: 9999px;
+              background: linear-gradient(90deg, hsl(230 84% 55%), hsl(190 95% 50%), hsl(280 80% 60%), hsl(230 84% 55%));
+              background-size: 300% 300%;
+              animation: gradient-border-spin 3s linear infinite;
+              z-index: -1;
+            }
+            .gradient-border-pill::after {
+              content: '';
+              position: absolute;
+              inset: 0;
+              border-radius: 9999px;
+              background: hsl(222 47% 8%);
+              z-index: -1;
+            }
+          `}</style>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
