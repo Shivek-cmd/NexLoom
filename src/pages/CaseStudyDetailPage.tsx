@@ -26,13 +26,13 @@ const CaseStudyDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section className="pt-32 pb-12 lg:pt-40" style={{ background: "var(--gradient-hero)" }}>
+      <section className="pt-28 pb-10 lg:pt-32" style={{ background: "var(--gradient-hero)" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link to="/case-studies" className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Case Studies
           </Link>
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="block text-accent font-semibold text-sm uppercase tracking-wider mb-3">{study.category}</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-display text-3xl lg:text-5xl font-bold text-primary-foreground max-w-4xl">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-display text-2xl lg:text-4xl font-bold text-primary-foreground max-w-4xl">
             {study.title}
           </motion.h1>
         </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24">
       <div className="absolute inset-0 z-0" style={{ background: "var(--gradient-hero)" }} />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full hero-glow animate-pulse-glow" />
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full hero-glow animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
@@ -23,17 +23,46 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8"
+            className="gradient-border-pill inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-transparent text-primary mb-8"
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Engineering · Cloud · AI · Growth</span>
           </motion.div>
+          <style>{`
+            @keyframes gradient-border-spin {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+            .gradient-border-pill {
+              position: relative;
+              z-index: 0;
+            }
+            .gradient-border-pill::before {
+              content: '';
+              position: absolute;
+              inset: -2px;
+              border-radius: 9999px;
+              background: linear-gradient(90deg, hsl(230 84% 55%), hsl(190 95% 50%), hsl(280 80% 60%), hsl(230 84% 55%));
+              background-size: 300% 300%;
+              animation: gradient-border-spin 3s linear infinite;
+              z-index: -1;
+            }
+            .gradient-border-pill::after {
+              content: '';
+              position: absolute;
+              inset: 0;
+              border-radius: 9999px;
+              background: hsl(222 47% 8%);
+              z-index: -1;
+            }
+          `}</style>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
           >
             We Build the Software{" "}
             <span className="gradient-text">That Scales</span>{" "}

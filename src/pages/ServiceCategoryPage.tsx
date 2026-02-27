@@ -63,7 +63,7 @@ const ServiceCategoryPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+      <section className="pt-28 pb-12 lg:pt-32 lg:pb-16 relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
         <div className="absolute inset-0 hero-glow animate-pulse-glow" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.span
@@ -77,7 +77,7 @@ const ServiceCategoryPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground mb-6 max-w-4xl mx-auto"
+            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 max-w-4xl mx-auto"
           >
             {category.headline}
           </motion.h1>

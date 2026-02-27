@@ -40,7 +40,7 @@ export const CaseStudiesSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12 max-w-5xl mx-auto">
           {featured.map((study, index) => (
             <motion.div
               key={study.slug}
