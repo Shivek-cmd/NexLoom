@@ -47,7 +47,7 @@ export const HeroSection = () => {
         style={{ opacity: transitioning ? 1 : 0 }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/80 via-secondary/75 to-secondary/85" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-secondary/90 via-secondary/85 to-secondary/92" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
