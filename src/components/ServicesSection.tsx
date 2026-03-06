@@ -26,7 +26,7 @@ export const ServicesSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4"
           >
-            End-to-End Technology Solutions
+            Services built for speed, reliability, and growth
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
