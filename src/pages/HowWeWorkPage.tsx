@@ -9,8 +9,16 @@ const steps = [
   { icon: MessageSquare, title: "Project Fit Call", desc: "We align on goals, constraints, timeline, and success metrics. You leave with a clear next step." },
   { icon: ClipboardList, title: "Scope & Plan", desc: "We produce a short delivery plan with milestones, risks, and a fixed set of deliverables for the first phase." },
   { icon: Code2, title: "Build & Prove", desc: "We ship in small increments with weekly demos. We track progress in working software, not slides." },
-  { icon: Rocket, title: "Launch & Scale", desc: "We deploy your solution, ensure everything runs smoothly, and help you scale as your business grows." },
-  { icon: Headphones, title: "Ongoing Support", desc: "Post-launch support, monitoring, and optimization. We're your long-term technology partner." },
+  { icon: Rocket, title: "Launch & Stabilize", desc: "We deploy with monitoring, rollback plans, and runbooks so production stays predictable." },
+  { icon: Headphones, title: "Operate & Improve", desc: "We support the system, reduce toil, and keep delivery moving through measured improvements." },
+];
+
+const deliverables = [
+  "A named technical lead.",
+  "Weekly demos and status.",
+  "A delivery plan with milestones and risks.",
+  "Production readiness checklist.",
+  "Runbooks and handoff docs.",
 ];
 
 const HowWeWorkPage = () => {
