@@ -76,7 +76,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6"
           >
-            We Build the Software <span className="gradient-text">That Scales</span> Your Business
+            Ship software that <span className="gradient-text">grows revenue.</span>
           </motion.h1>
 
           <motion.p
