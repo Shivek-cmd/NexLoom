@@ -85,8 +85,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg sm:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-10"
           >
-            From full-stack engineering and cloud infrastructure to AI agents and growth systems—Nexloom delivers
-            end-to-end technology solutions for ambitious companies.
+            Senior-led full-stack, cloud, and AI delivery from plan to production, assembled to improve speed, quality, and operating predictability.
           </motion.p>
 
           <motion.div
