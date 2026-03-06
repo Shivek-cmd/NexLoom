@@ -76,7 +76,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6"
           >
-            We Build the Software <span className="gradient-text">That Scales</span> Your Business
+            Ship software that <span className="gradient-text">grows revenue.</span>
           </motion.h1>
 
           <motion.p
@@ -85,8 +85,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg sm:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-10"
           >
-            From full-stack engineering and cloud infrastructure to AI agents and growth systems—Nexloom delivers
-            end-to-end technology solutions for ambitious companies.
+            Senior-led full-stack, cloud, and AI delivery from plan to production, assembled to improve speed, quality, and operating predictability.
           </motion.p>
 
           <motion.div

@@ -1,21 +1,26 @@
 import { motion } from "framer-motion";
-import { Lightbulb, Users, Target } from "lucide-react";
+import { Lightbulb, Users, Target, RefreshCw } from "lucide-react";
 
 const values = [
   {
     icon: Lightbulb,
     title: "Technical Excellence",
-    description: "We build with modern architecture, best practices, and a relentless focus on code quality, performance, and scalability.",
+    description: "We build with clean architecture, strong testing, and pragmatic standards so your team ships faster with fewer regressions.",
   },
   {
     icon: Users,
     title: "Partnership Mindset",
-    description: "We integrate with your team, understand your business goals, and deliver solutions that create measurable impact.",
+    description: "We work as part of your team, stay transparent on tradeoffs, and take ownership through delivery, so you get fewer surprises.",
   },
   {
     icon: Target,
     title: "Results-Driven",
-    description: "Every project is measured by business outcomes—faster delivery, lower costs, better performance, and sustainable growth.",
+    description: "We define success up front and track delivery, reliability, and cost, so progress stays visible and measurable.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Continuous Improvement",
+    description: "We run retros, refine delivery systems, and automate repeat work, so each release gets easier, not harder.",
   },
 ];
 
@@ -43,7 +48,7 @@ export const ValuesSection = () => {
             What Drives Nexloom
           </motion.h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {values.map((value, index) => (
             <motion.div
               key={value.title}

@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MessageSquare, Search, Code2, Rocket, Headphones } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, MessageSquare, ClipboardList, Code2, Rocket, Headphones } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { HeroBanner } from "@/components/HeroBanner";
 
 const steps = [
-  { icon: MessageSquare, title: "Discovery Call", desc: "We start with a free consultation to understand your business, challenges, and goals. No commitment required." },
-  { icon: Search, title: "Assessment & Proposal", desc: "Our team evaluates your needs, defines scope, and delivers a clear proposal with timeline, deliverables, and pricing." },
-  { icon: Code2, title: "Build & Iterate", desc: "We execute in agile sprints with regular demos and feedback loops. You stay involved and in control throughout." },
+  { icon: MessageSquare, title: "Project Fit Call", desc: "We align on goals, constraints, timeline, and success metrics. You leave with a clear next step." },
+  { icon: ClipboardList, title: "Scope & Plan", desc: "We produce a short delivery plan with milestones, risks, and a fixed set of deliverables for the first phase." },
+  { icon: Code2, title: "Build & Prove", desc: "We ship in small increments with weekly demos. We track progress in working software, not slides." },
   { icon: Rocket, title: "Launch & Scale", desc: "We deploy your solution, ensure everything runs smoothly, and help you scale as your business grows." },
   { icon: Headphones, title: "Ongoing Support", desc: "Post-launch support, monitoring, and optimization. We're your long-term technology partner." },
 ];
@@ -23,7 +22,7 @@ const HowWeWorkPage = () => {
           How We Work
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
-          A proven process designed for clarity, speed, and results.
+          Senior-led delivery with clear scope, weekly demos, and production-grade launches.
         </motion.p>
       </HeroBanner>
 
@@ -56,8 +55,8 @@ const HowWeWorkPage = () => {
       <section className="py-20" style={{ background: "var(--gradient-dark)" }}>
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl font-bold text-primary-foreground mb-4">Ready to Start?</h2>
-          <p className="text-primary-foreground/70 mb-8">Begin with a free discovery call. No commitment required.</p>
-          <Button asChild variant="hero" size="lg"><Link to="/book-a-call">Book a Call <ArrowRight className="w-5 h-5" /></Link></Button>
+          <p className="text-primary-foreground/70 mb-8">Begin with a free project fit call.</p>
+          <Button asChild variant="hero" size="lg"><a href="https://cal.com/stevefowler/30m" target="_blank" rel="noopener noreferrer">Book a Call <ArrowRight className="w-5 h-5" /></a></Button>
         </div>
       </section>
       <Footer />

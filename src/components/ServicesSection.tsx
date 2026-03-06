@@ -26,7 +26,7 @@ export const ServicesSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4"
           >
-            End-to-End Technology Solutions
+            Services built for speed, reliability, and growth
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export const ServicesSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground text-lg max-w-2xl mx-auto"
           >
-            Four pillars of expertise to build, scale, and automate your technology.
+            Four delivery lanes, each led by senior engineers, each built to ship in production and keep operations predictable.
           </motion.p>
         </div>
 
@@ -68,8 +68,11 @@ export const ServicesSection = () => {
                       <h3 className="font-display text-xl font-bold text-foreground mb-3">
                         {cat.title}
                       </h3>
-                      <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                        {cat.intro.slice(0, 150)}...
+                      <p className="text-muted-foreground mb-2 leading-relaxed text-sm font-medium">
+                        {cat.outcome}
+                      </p>
+                      <p className="text-muted-foreground/70 mb-4 leading-relaxed text-sm italic">
+                        {cat.metric}
                       </p>
                       <ul className="space-y-1.5 mb-6">
                         {cat.subservices.slice(0, 4).map((sub) => (

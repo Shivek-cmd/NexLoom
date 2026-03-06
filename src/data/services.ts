@@ -18,6 +18,8 @@ export interface ServiceCategory {
   subservices: SubService[];
   ctaLabel: string;
   image: string;
+  outcome: string;
+  metric: string;
 }
 
 export const serviceCategories: ServiceCategory[] = [
@@ -25,8 +27,10 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "engineering-product",
     title: "Engineering & Product",
     shortTitle: "Engineering",
-    headline: "Build Scalable Software Products That Drive Business Growth",
+    headline: "Turn roadmap work into production releases without churn.",
     intro: "From MVPs to enterprise-grade platforms, Nexloom's engineering teams deliver robust, scalable software using modern frameworks and best practices. We turn your product vision into production-ready applications.",
+    outcome: "Turn roadmap work into production releases without churn.",
+    metric: "Weekly releases within 30 days.",
     metaTitle: "Engineering & Product Development Services | Nexloom",
     metaDescription: "Full-stack web, mobile, SaaS, and enterprise application development. Nexloom builds scalable software products with modern architecture and expert engineering teams.",
     ctaLabel: "View Engineering Services",
@@ -134,8 +138,10 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "cloud-devops",
     title: "Cloud & DevOps",
     shortTitle: "Cloud",
-    headline: "Accelerate Delivery with Cloud-Native Infrastructure & DevOps",
+    headline: "Improve uptime and deploy speed while keeping cloud spend under control.",
     intro: "Nexloom's cloud and DevOps teams help you ship faster, scale effortlessly, and maintain bulletproof reliability. We design, build, and manage cloud infrastructure that powers your applications with confidence.",
+    outcome: "Improve uptime and deploy speed while keeping cloud spend under control.",
+    metric: "99.9% uptime target.",
     metaTitle: "Cloud Architecture & DevOps Services | Nexloom",
     metaDescription: "Cloud architecture, DevOps, CI/CD pipelines, infrastructure automation, and security compliance. Nexloom builds and manages cloud infrastructure for high-performance applications.",
     ctaLabel: "View Cloud & DevOps",
@@ -243,8 +249,10 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "ai-automation",
     title: "AI & Automation",
     shortTitle: "AI",
-    headline: "Unlock Intelligent Automation with AI Agents & LLM Solutions",
+    headline: "Remove manual work with safe AI workflows tied to real systems.",
     intro: "Nexloom builds custom AI solutions that transform how businesses operate. From intelligent agents to automated workflows, we harness the power of large language models and machine learning to drive efficiency and innovation.",
+    outcome: "Remove manual work with safe AI workflows tied to real systems.",
+    metric: "Cut manual ops time by 40%.",
     metaTitle: "AI Agents & Intelligent Automation Services | Nexloom",
     metaDescription: "Custom AI agents, agentic workflows, LLM integrations, and intelligent automation solutions. Nexloom builds AI-powered systems that transform business operations.",
     ctaLabel: "View AI & Automation",
@@ -350,13 +358,15 @@ export const serviceCategories: ServiceCategory[] = [
   },
   {
     slug: "integrations-growth",
-    title: "Integrations & Growth",
-    shortTitle: "Growth",
-    headline: "Connect, Scale, and Grow with Seamless Integrations",
-    intro: "Nexloom connects your tech stack, builds data pipelines, and creates the growth infrastructure that scales your business. We integrate systems, optimize data flows, and build the analytics foundation for data-driven growth.",
+    title: "Integrations & Data",
+    shortTitle: "Data",
+    headline: "Connect systems and data so teams stop re-entering work and reporting stays trusted.",
+    intro: "Nexloom connects your tech stack, builds data pipelines, and creates the data infrastructure that keeps operations predictable. We integrate systems, optimize data flows, and build the analytics foundation for trusted reporting.",
+    outcome: "Connect systems and data so teams stop re-entering work and reporting stays trusted.",
+    metric: "Reduce cycle time by 25%.",
     metaTitle: "API Development & Growth Infrastructure Services | Nexloom",
     metaDescription: "API development, platform integrations, data pipelines, martech systems, and analytics dashboards. Nexloom builds the growth infrastructure that scales your business.",
-    ctaLabel: "View Integrations & Growth",
+    ctaLabel: "View Integrations & Data",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
     subservices: [
       {
