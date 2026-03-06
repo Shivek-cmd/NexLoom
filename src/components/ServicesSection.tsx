@@ -35,7 +35,7 @@ export const ServicesSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground text-lg max-w-2xl mx-auto"
           >
-            Four pillars of expertise to build, scale, and automate your technology.
+            Four delivery lanes, each led by senior engineers, each built to ship in production and keep operations predictable.
           </motion.p>
         </div>
 
