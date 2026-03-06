@@ -28,7 +28,7 @@ const AboutPage = () => {
           About <span className="gradient-text">Nexloom</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-primary-foreground/70 text-lg max-w-3xl mx-auto">
-          We are a technology company that helps ambitious businesses build, scale, and automate through expert engineering, cloud infrastructure, AI solutions, and growth systems.
+          Senior-led delivery for product, cloud, and AI. We ship in production and keep operations predictable. Built by senior engineers and operators. No handoffs.
         </motion.p>
       </HeroBanner>
 
