@@ -60,10 +60,33 @@ const HowWeWorkPage = () => {
         </div>
       </section>
 
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="font-display text-2xl font-bold text-foreground mb-8">What you get in every engagement</h2>
+            <ul className="space-y-4">
+              {deliverables.map((item, i) => (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3 text-muted-foreground"
+                >
+                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                  <span>{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-20" style={{ background: "var(--gradient-dark)" }}>
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-primary-foreground mb-4">Ready to Start?</h2>
-          <p className="text-primary-foreground/70 mb-8">Begin with a free project fit call.</p>
+          <h2 className="font-display text-3xl font-bold text-primary-foreground mb-4">Get a project fit check</h2>
+          <p className="text-primary-foreground/70 mb-8">Bring your top priority. We will tell you if we are a fit and what we would do first.</p>
           <Button asChild variant="hero" size="lg"><a href="https://cal.com/stevefowler/30m" target="_blank" rel="noopener noreferrer">Book a Call <ArrowRight className="w-5 h-5" /></a></Button>
         </div>
       </section>
