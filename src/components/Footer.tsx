@@ -6,7 +6,7 @@ const footerLinks = {
     { label: "Engineering & Product", href: "/services/engineering-product" },
     { label: "Cloud & DevOps", href: "/services/cloud-devops" },
     { label: "AI & Automation", href: "/services/ai-automation" },
-    { label: "Integrations & Growth", href: "/services/integrations-growth" },
+    { label: "Integrations & Data", href: "/services/integrations-growth" },
   ],
   company: [
     { label: "About Us", href: "/about" },

@@ -68,8 +68,11 @@ export const ServicesSection = () => {
                       <h3 className="font-display text-xl font-bold text-foreground mb-3">
                         {cat.title}
                       </h3>
-                      <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                        {cat.intro.slice(0, 150)}...
+                      <p className="text-muted-foreground mb-2 leading-relaxed text-sm font-medium">
+                        {cat.outcome}
+                      </p>
+                      <p className="text-muted-foreground/70 mb-4 leading-relaxed text-sm italic">
+                        {cat.metric}
                       </p>
                       <ul className="space-y-1.5 mb-6">
                         {cat.subservices.slice(0, 4).map((sub) => (

@@ -366,7 +366,7 @@ export const serviceCategories: ServiceCategory[] = [
     metric: "Reduce cycle time by 25%.",
     metaTitle: "API Development & Growth Infrastructure Services | Nexloom",
     metaDescription: "API development, platform integrations, data pipelines, martech systems, and analytics dashboards. Nexloom builds the growth infrastructure that scales your business.",
-    ctaLabel: "View Integrations & Growth",
+    ctaLabel: "View Integrations & Data",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
     subservices: [
       {

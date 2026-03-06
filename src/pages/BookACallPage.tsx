@@ -27,7 +27,7 @@ const BookACallPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="rounded-2xl overflow-hidden border border-border/50 shadow-lg bg-card mb-12">
             <iframe
-              src="https://cal.com/amit-happypeopleai"
+              src="https://cal.com/stevefowler/30m"
               style={{ width: "100%", height: "700px", border: "none" }}
               title="Book a Call with Nexloom"
               loading="lazy"
