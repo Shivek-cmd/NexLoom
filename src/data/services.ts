@@ -18,6 +18,8 @@ export interface ServiceCategory {
   subservices: SubService[];
   ctaLabel: string;
   image: string;
+  outcome: string;
+  metric: string;
 }
 
 export const serviceCategories: ServiceCategory[] = [
